@@ -2,19 +2,18 @@
 
 ## Author: (Sergio)
 
-**Description:** Cross Site Scripting vulnerability in CMSmadesimple v.2.2.18 allows a local attacker to execute arbitrary code via a crafted script to the Title in the Content - News Menu.
+**Description:** Cross Site Scripting vulnerability in CMSmadesimple v.2.2.18 allows a local attacker to execute arbitrary code via a crafted script to the Title in the My Preferences - Manage Shortcuts
 
-**Attack Vectors:** Scripting A vulnerability in the sanitization of the entry in the Ttile of "Content - News Menu" allows injecting JavaScript code that will be executed when the user accesses the web page.
+**Attack Vectors:** Scripting A vulnerability in the sanitization of the entry in the Title of "My Preferences - Manage Shortcuts" allows injecting JavaScript code that will be executed when the user accesses the web page.
 
 ---
 
 ### POC:
 
 
-When logging into the panel, we will go to the "Content- News" section off General Menu.
+When logging into the panel, we will go to the "My Preferences - Manage Shortcuts" section off General Menu.
 
-![XSS Title](https://github.com/sromanhu/CMSmadesimple-Stored-XSS---News/assets/87250597/7b2f1dc3-2d69-4ecb-8fee-a1b32377dfc4)
-
+![XSS Shortcut](https://github.com/sromanhu/CMSmadesimple-Stored-XSS---Shortcut/assets/87250597/2b7b2c25-b1b8-4dcd-8847-158da95a78da)
 
 
 
@@ -25,12 +24,14 @@ We edit that Content - News Menu with the payload that we have created and see t
 ### XSS Payload:
 
 ```js
-'"><svg/onload=prompt('Title')>
+'"><svg/onload=alert('Title')>
 ```
 
 
 In the following image you can see the embedded code that executes the payload in the main web.
-![XSS Title resultado](https://github.com/sromanhu/CMSmadesimple-Stored-XSS---News/assets/87250597/bfe17aeb-5139-4f6c-b09c-5d38d6a7b57b)
+![XSS Shortcut resultado](https://github.com/sromanhu/CMSmadesimple-Stored-XSS---Shortcut/assets/87250597/0348c5a5-84ad-4b19-8774-e3bbe1376e78)
+
+
 
 
 
